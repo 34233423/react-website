@@ -1,0 +1,76 @@
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.carousel_viewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel::before,
+.carousel::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  translate: -50% 0;
+  width: 500%;
+  height: 500%;
+  border-radius: 50%;
+  background: #ffffff;
+  
+}
+
+.carousel::before {
+  top: -480%;
+}
+
+.carousel::after {
+  bottom: -480%;
+}
+
+.carousel_slider {
+  position: relative;
+  flex: 0 0 33.33%;
+  width: 33.33%;
+}
+
+.carousel_snapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+  background-size: cover;
+  background-position: 50%;
+  border: 10px solid #ffffff;
+  transition: background 0.8s ease;
+  box-shadow: 10px 10px 20px #000000 !important;
+}
+.carousel_snapper:hover{
+  border: 1px solid #ffffff;
+  background: url("") left center no-repeat;
+  background-size: 600px;
+}
+
+/* .caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+} */
